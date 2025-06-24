@@ -1,3 +1,4 @@
+
 # 🧾 Microservices Architecture - Payment, Order, Inventory System
 
 <p align="center">
@@ -16,11 +17,11 @@ Ini adalah proyek **Microservices** sederhana yang terdiri dari tiga service uta
 
 Setiap service dibuat menggunakan bahasa **Golang**, menggunakan **PostgreSQL** sebagai database, dan berjalan secara terisolasi menggunakan **Docker Compose**.
 
-
+---
 
 ## 🏗️ Arsitektur
 
-
+```
 
 \[Client/API Request]
 |
@@ -37,7 +38,9 @@ v
 |
 PostgreSQL DB (masing-masing service punya DB sendiri)
 
+````
 
+---
 
 ## 📌 Langkah Cepat Penggunaan
 
@@ -45,29 +48,32 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini secara lokal:
 
 ### 1. 💾 Clone / Download Proyek
 
-Buka bash
+```bash
 git clone https://github.com/mchann/microservices-architecture.git
 cd microservices-architecture
+````
 
 Atau bisa juga langsung [📥 Download ZIP](https://github.com/mchann/microservices-architecture/archive/refs/heads/main.zip), lalu ekstrak.
 
+---
 
 ### 2. 🐳 Jalankan Docker Compose
 
 Pastikan Docker sudah terinstal dan aktif.
 
-bash
+```bash
 docker-compose up --build
-
+```
 
 Tunggu sampai semua container service (`order`, `payment`, `inventory`, dan database) berhasil berjalan.
 
+---
 
 ### 3. ✅ Cek Status Container
 
-bash
+```bash
 docker ps
-
+```
 
 Pastikan container seperti berikut muncul:
 
@@ -76,6 +82,7 @@ Pastikan container seperti berikut muncul:
 * `inventory-service`
 * `order-db`, `payment-db`, `inventory-db` (PostgreSQL untuk masing-masing service)
 
+---
 
 ### 4. 🌐 Akses Endpoint API
 
@@ -109,20 +116,24 @@ docker-compose down
 
 Jika ingin sekaligus menghapus data (volume):
 
-bash
+```bash
 docker-compose down -v
+```
 
+---
 
 ## 🗂️ Struktur Direktori
 
-bash
+```bash
 .
 ├── order-service/
 ├── payment-service/
 ├── inventory-service/
 ├── docker-compose.yml
 └── README.md
+```
 
+---
 
 ## 🛠 Teknologi yang Digunakan
 
@@ -131,6 +142,21 @@ bash
 * [PostgreSQL](https://www.postgresql.org/) – Sistem manajemen basis data
 * [GORM](https://gorm.io/) – ORM untuk Golang
 
+---
+
+## 📬 Kontribusi
+
+Pull request sangat diterima! Untuk perubahan besar, silakan buka issue terlebih dahulu untuk mendiskusikan apa yang ingin kamu ubah.
+
+---
+
+## 📄 License
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+```
 
 ---
 
