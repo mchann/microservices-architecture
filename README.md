@@ -144,8 +144,3 @@ docker-compose down -v
 
 ---
 
-
----
-
-Kalau nanti kamu mau aku bantu **tambahin bagian dokumentasi API (endpoint + contoh data)** atau **koleksi Postman**, tinggal bilang aja ya.
-```
