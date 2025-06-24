@@ -144,19 +144,6 @@ docker-compose down -v
 
 ---
 
-## 📬 Kontribusi
-
-Pull request sangat diterima! Untuk perubahan besar, silakan buka issue terlebih dahulu untuk mendiskusikan apa yang ingin kamu ubah.
-
----
-
-## 📄 License
-
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
-
----
-
-```
 
 ---
 
