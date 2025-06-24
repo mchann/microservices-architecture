@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  order:
+    build: order-service
+    environment:
+      PAYMENT_SERVICE_HOST: "payment:8080"
+      INVENTORY_SERVICE_HOST: "inventory:8082"
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: order
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: order
+    ports:
+      - "80:8081"
+    depends_on:
+      - payment
+      - inventory
+      - postgres
+
+
+  payment:
+    build: payment-service
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: payment
+      POSTGRES_USER: payment
+      POSTGRES_PASSWORD: payment
+      COUNTRY_CODE: id
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    restart: always
+
+  inventory:
+    build: inventory-service
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: inventory
+      POSTGRES_USER: inventory
+      POSTGRES_PASSWORD: inventory
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+    restart: always
+
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
